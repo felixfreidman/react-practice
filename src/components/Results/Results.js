@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export const Results = (props) => {
     let correctAnswerCounter = 0
-
+    console.log('Results', props);
     return (
         <div className={classes.Results}>
             <ul>
@@ -13,11 +13,11 @@ export const Results = (props) => {
                 {props.quiz.map((quizItem, index) => {
                     const cls = [
                         'fa',
-                        props.results[quizItem.questionID] === 'failure' ? 'fa-times' : 'fa-check',
-                        classes[props.results[quizItem.questionID]]
+                        props.results[quizItem.id - 1] === 'failure' ? 'fa-times' : 'fa-check',
+                        classes[props.results[quizItem.id - 1]]
                     ]
 
-                    if (props.results[quizItem.questionID] === 'success') {
+                    if (props.results[quizItem.id - 1] === 'success') {
                         correctAnswerCounter++;
                     }
                     return (

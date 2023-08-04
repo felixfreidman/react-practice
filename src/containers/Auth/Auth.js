@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import classes from './Auth.module.css'
 import { Button } from '../../components/UI/Button/Button'
 import { Input } from '../../components/UI/Input/Input'
+import axios from 'axios'
 
 const validateEmail = (email) => {
     const regExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
@@ -37,12 +38,90 @@ export const Auth = () => {
         },
     })
 
-    const loginHandler = () => {
-
+    const loginHandler = async () => {
+        const authData = {
+            email: formControls.email.value,
+            password: formControls.password.value,
+            returnSecureToken: true,
+        }
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD5uyWskvKbNyIAZ4IbrSFD6sowexHwYlQ', authData)
+            console.log(response);
+            setFormControls(
+                {
+                    email: {
+                        value: '',
+                        type: 'email',
+                        label: 'Email',
+                        errorMessage: 'Input correct email',
+                        valid: false,
+                        touched: false,
+                        validation: {
+                            required: true,
+                            email: true
+                        }
+                    },
+                    password: {
+                        value: '',
+                        type: 'password',
+                        label: 'Password',
+                        errorMessage: 'Input correct password',
+                        valid: false,
+                        touched: false,
+                        validation: {
+                            required: true,
+                            minLength: 6
+                        }
+                    },
+                }
+            )
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 
-    const signupHandler = () => {
-
+    const signupHandler = async () => {
+        const authData = {
+            email: formControls.email.value,
+            password: formControls.password.value,
+            returnSecureToken: true,
+        }
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD5uyWskvKbNyIAZ4IbrSFD6sowexHwYlQ', authData)
+            console.log(response);
+            setFormControls(
+                {
+                    email: {
+                        value: '',
+                        type: 'email',
+                        label: 'Email',
+                        errorMessage: 'Input correct email',
+                        valid: false,
+                        touched: false,
+                        validation: {
+                            required: true,
+                            email: true
+                        }
+                    },
+                    password: {
+                        value: '',
+                        type: 'password',
+                        label: 'Password',
+                        errorMessage: 'Input correct password',
+                        valid: false,
+                        touched: false,
+                        validation: {
+                            required: true,
+                            minLength: 6
+                        }
+                    },
+                }
+            )
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 
     const submitHandler = (event) => {
