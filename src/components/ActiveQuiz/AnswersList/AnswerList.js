@@ -10,7 +10,10 @@ export const AnswerList = (props) => {
                         answer={answer}
                         key={index}
                         onAnswerClick={props.onAnswerClick}
-                        answerState={props.answerState ? props.answerState[answer.id] : null}
+                        answerState={props.answerState ? answer.id : null}
+                        correctID={props.correctID}
+                        isClicked={props.isClicked}
+                        clickedID={props.clickedID}
                     />
                 )
             })}

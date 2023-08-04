@@ -13,7 +13,14 @@ export const ActiveQuiz = (props) => {
                 <small>{props.questionIndex} out of {props.quizLength}</small>
             </p>
 
-            <AnswerList answers={props.answers} onAnswerClick={props.onAnswerClick} answerState={props.answerState} />
+            <AnswerList
+                answers={props.answers}
+                onAnswerClick={props.onAnswerClick}
+                answerState={props.answerState}
+                correctID={props.correctID}
+                isClicked={props.isClicked}
+                clickedID={props.clickedID}
+            />
         </div>
     )
 }

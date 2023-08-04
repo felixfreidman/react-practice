@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Results.module.css'
 import { Button } from '../UI/Button/Button'
+import { Link } from 'react-router-dom'
 
 export const Results = (props) => {
     let correctAnswerCounter = 0
@@ -36,9 +37,11 @@ export const Results = (props) => {
                     onClick={props.onRetry}
                     type='primary'
                 >Retry</Button>
-                <Button
-                    type='success'
-                >Go to test list</Button>
+                <Link to={'/'}>
+                    <Button
+                        type='success'
+                    >Go to test list</Button>
+                </Link>
             </div>
         </div>
     )
