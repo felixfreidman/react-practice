@@ -2,8 +2,8 @@ import React from 'react'
 import Layout from './hoc/Layout/Layout';
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { Quiz } from './containers/Quiz/Quiz';
-import Auth from './containers/Auth/Auth';
-import QuizCreator from './containers/QuizCreator/QuizCreator';
+import { Auth } from './containers/Auth/Auth';
+import { QuizCreator } from './containers/QuizCreator/QuizCreator';
 import QuizList from './containers/QuizList/QuizList'
 
 

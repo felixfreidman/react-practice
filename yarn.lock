@@ -5273,6 +5273,11 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
+is-js@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/is-js/-/is-js-0.2.1.tgz#586e4c2c2cd72d80fc1f4839c345a7a732158b08"
+  integrity sha512-VH3t/61s7BEbhJLqd8dCt2pUFG+Pqu6v1imBxU99mbWlCuiqqS7CNMnTnVjm/lEhxKOsl01WwW20Dtbw7kFdTA==
+
 is-map@^2.0.1, is-map@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/is-map/-/is-map-2.0.2.tgz#00922db8c9bf73e81b7a335827bc2a43f2b91127"

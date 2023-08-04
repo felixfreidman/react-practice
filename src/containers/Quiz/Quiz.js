@@ -13,7 +13,7 @@ export const Quiz = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [answerState, setAnswerState] = useState('');
     const [clicked, setClicked] = useState(false)
-    const [quiz, setQuiz] = useState([
+    const [quiz] = useState([
         {
             question: 'What color is the sky',
             rightAnswerID: 2,
